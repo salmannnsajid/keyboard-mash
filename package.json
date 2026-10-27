@@ -1,0 +1,55 @@
+{
+  "name": "keyboard-mash",
+  "version": "0.1.0",
+  "description": "Detect keyboard-mashed gibberish input like \"asdf\", \"qwerty\", or \"sdkjfhsdf\" in names and form fields. Zero dependencies, TypeScript-first.",
+  "keywords": [
+    "gibberish",
+    "keyboard-mash",
+    "spam",
+    "fake-input",
+    "lead-quality",
+    "data-quality",
+    "form-validation",
+    "validation",
+    "validator"
+  ],
+  "license": "MIT",
+  "author": "Salman Sajid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmannnsajid/keyboard-mash.git"
+  },
+  "homepage": "https://github.com/salmannnsajid/keyboard-mash#readme",
+  "bugs": {
+    "url": "https://github.com/salmannnsajid/keyboard-mash/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}
